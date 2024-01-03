@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
 
-const firebaseConfig = { // 아래에 이제 APC에서 쓰는 firebase 프로젝트의 setting 값들을 넝허주면 됨
+const firebaseConfig = { // 아래에 이제 APC에서 쓰는 firebase 프로젝트의 setting 값들을 넣어주면 됨
     apiKey: "AIzaSyDea5LTDfgoq4yV2mhKPS4BnmhzGqsaLg8",
     authDomain: "test-a8aa8.firebaseapp.com",
     databaseURL: "https://test-a8aa8-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -15,7 +15,7 @@ const firebaseConfig = { // 아래에 이제 APC에서 쓰는 firebase 프로젝
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-const dataRef = ref(database, 'students');
+const dataRef = ref(database, 'students'); // 여기 students를 원하는 태그 값으로 바꿔주기
 
 // 실시간으로 데이터 변경 감지(추가 삭제 모두 가능)
 onValue(dataRef, (snapshot) => {
